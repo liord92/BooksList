@@ -20,16 +20,9 @@ Includes full CRUD support (Create, Read, Update, Delete).
 
 ##  How to Run
 
-1. Make sure the XML file path is correctly set in `appsettings.Development.json`:
-
-   ```json
-   {
-     "XmlFilePath": "wwwroot/books.xml"
-   }
-
-2. dotnet run 
-3. Swagger UI: https://localhost:7260/swagger/index.html
-5. HTML Page: https://localhost:7260/index.html
+1. dotnet run 
+2. Swagger UI: https://localhost:7260/swagger/index.html
+3. HTML Page: https://localhost:7260/index.html
 
 
    

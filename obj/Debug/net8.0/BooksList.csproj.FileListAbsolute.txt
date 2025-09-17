@@ -34,3 +34,4 @@ C:\Dev\BooksList\BooksList\obj\Debug\net8.0\refint\BooksList.dll
 C:\Dev\BooksList\BooksList\obj\Debug\net8.0\BooksList.pdb
 C:\Dev\BooksList\BooksList\obj\Debug\net8.0\BooksList.genruntimeconfig.cache
 C:\Dev\BooksList\BooksList\obj\Debug\net8.0\ref\BooksList.dll
+C:\Dev\BooksList\BooksList\obj\Debug\net8.0\BooksList.sourcelink.json
