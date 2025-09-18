@@ -1,4 +1,4 @@
-﻿/*const apiUrl = "http://localhost:5140/api/books/";*/
+﻿
 const apiUrl = "https://localhost:7260/api/books/"
 
 
@@ -8,13 +8,11 @@ async function loadBooks() {
         const books = await response.json();
 
         const booksTable = document.getElementById("booksTable").getElementsByTagName('tbody')[0];
-        booksTable.innerHTML = ""; // מנקה את התוכן הקיים בטבלה
+        booksTable.innerHTML = "";
 
         books.forEach(book => {
             const row = booksTable.insertRow();
 
-            // יצירת תאים לכל עמודה
-/*            row.insertCell(0).textContent = book.isbn;*/
             row.insertCell(0).textContent = book.title;
             row.insertCell(1).textContent = book.authors.join(", ");
             row.insertCell(2).textContent = book.year;
@@ -22,7 +20,6 @@ async function loadBooks() {
             row.insertCell(4).textContent = book.category;
             row.insertCell(5).textContent = book.cover;
 
-            // כפתור לעריכה
             const actionsCell = row.insertCell(6);
             const editIcon = document.createElement("i");
             editIcon.className = "fas fa-edit action-icon edit";
@@ -31,12 +28,11 @@ async function loadBooks() {
             editIcon.onclick = () => editBook(book);
             actionsCell.appendChild(editIcon);
 
-            // כפתור למחיקה
             const deleteIcon = document.createElement("i");
             deleteIcon.className = "fas fa-trash-alt action-icon delete";
             deleteIcon.title = "Delete";
             deleteIcon.onclick = () => {
-                console.log("Deleting book with ISBN:", book.isbn); // בדוק אם זה מופיע
+                console.log("Deleting book with ISBN:", book.isbn);
                 deleteBook(book.isbn);
             };
             actionsCell.appendChild(deleteIcon);
@@ -47,7 +43,6 @@ async function loadBooks() {
 }
 window.onload = loadBooks;
 
-// פונקציה למחיקת ספר
 async function deleteBook(isbn) {
     const confirmDelete = confirm("Are you sure you want to delete this book?");
     if (confirmDelete) {
@@ -56,14 +51,13 @@ async function deleteBook(isbn) {
                 method: "DELETE",
             });
             loadBooks();
-            resetForm();// טוען מחדש את הספרים לאחר מחיקה
+            resetForm();
         } catch (error) {
             console.error("Error deleting book:", error);
         }
     }
 }
 
-// פונקציה לעריכת ספר
 function editBook(book) {
     document.getElementById("isbn").value = book.isbn;
     document.getElementById("title").value = book.title;
@@ -73,13 +67,11 @@ function editBook(book) {
     document.getElementById("category").value = book.category,
         document.getElementById("cover").value = book.cover
 
-    // שינוי כפתור ההוספה לכפתור עדכון
     const addButton = document.querySelector("#addBookForm button");
     addButton.textContent = "Update Book";
     addButton.onclick = () => updateBook(book.isbn);
 }
 
-// פונקציה לעדכון ספר
 async function updateBook(isbn) {
     const updatedBook = {
         isbn: document.getElementById("isbn").value,
@@ -106,7 +98,6 @@ async function updateBook(isbn) {
     }
 }
 
-// פונקציה להוספת ספר חדש
 async function addBook() {
     const newBook = {
         isbn: document.getElementById("isbn").value,
