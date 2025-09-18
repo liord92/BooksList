@@ -17,6 +17,26 @@ Includes full CRUD support (Create, Read, Update, Delete).
 -  Edit existing books
 -  Delete books
 
+## Project Architecture
+
+The project is built in a modular and separated way to allow for future expansion.
+There is a separation of data access logic into a Repository,
+which makes it easy to swap data sources in the future.
+
+BookService:
+Handles the business logic related to books,
+such as adding, updating, and retrieving book details.
+It interacts with the repository to access the data but does not manage the actual data storage itself.
+
+BookRepository:
+Manages the data access layer,
+responsible for retrieving and saving book data to a data source (such as an XML file or a database).
+It abstracts the underlying storage mechanism and provides data to the BookService.
+
+Due to the use of XML, 
+a locking mechanism (lock) has been implemented to prevent race conditions 
+in case of concurrent access to the same file. 
+This ensures that there is no simultaneous access to the XML file during read or write operations.
 
 ##  How to Run
 
