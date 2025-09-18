@@ -1,5 +1,0 @@
-wwwroot\index.html
-wwwroot\scripts.js
-wwwroot\styles.css
-wwwroot\xml\books.Production.xml
-wwwroot\xml\books.Development.xml
