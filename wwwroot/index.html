@@ -1,0 +1,60 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Books List</title>
+    <link rel="stylesheet" href="styles.css"> <!-- קישור ל-CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <h1 class="page-title">Books List</h1>
+
+        <table id="booksTable">
+            <thead>
+                <tr>
+                    <th>Title</th>
+                    <th>Authors</th>
+                    <th>Year</th>
+                    <th>Price</th>
+                    <th>Category</th>
+                    <th>Cover</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- הנתונים יתווספו כאן בצורה דינמית -->
+            </tbody>
+        </table>
+
+        <details>
+            <summary style="cursor: pointer; font-weight: bold; font-size: 1.2em;">
+                Add New Book
+            </summary>
+            <!-- טופס להוספת ספר חדש -->
+            <div id="addBookForm">
+                <h2>Add New Book</h2>
+                <label for="isbn">ISBN:</label>
+                <input type="text" id="isbn" required>
+                <label for="title">Title:</label>
+                <input type="text" id="title" required>
+                <label for="authors">Authors (comma separated):</label>
+                <input type="text" id="authors" required>
+                <label for="year">Year:</label>
+                <input type="number" id="year" required>
+                <label for="price">Price:</label>
+                <input type="number" id="price" required>
+                <label for="category">Category:</label>
+                <input type="text" id="category" required>
+                <label for="cover">Cover:</label>
+                <input type="text" id="cover" required>
+                <button onclick="addBook()">Add Book</button>
+                <button type="button" onclick="resetForm()">Refresh</button>
+            </div>
+            </details>
+</div>
+
+    <script src="/scripts.js"></script> <!-- קישור ל-JavaScript -->
+</body>
+</html>
