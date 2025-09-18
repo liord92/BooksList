@@ -35,7 +35,7 @@ namespace BooksList.Controllers
         {
             try
             {
-                if (book == null)
+                if (book == null || string.IsNullOrEmpty(book.Title))
                 {
                     return BadRequest("Book is null.");
                 }

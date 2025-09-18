@@ -1,5 +1,5 @@
-wwwroot\scripts.js
-wwwroot\xml\books.Production.xml
-wwwroot\styles.css
-wwwroot\xml\books.Development.xml
 wwwroot\index.html
+wwwroot\scripts.js
+wwwroot\styles.css
+wwwroot\xml\books.Production.xml
+wwwroot\xml\books.Development.xml

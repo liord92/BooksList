@@ -1,8 +1,12 @@
-﻿namespace BooksList.Models
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace BooksList.Models
 {
     public class Book
     {
-        public string Isbn { get; set; } 
+        [Required]
+        public string Isbn { get; set; }
+        [Required]
         public string Title { get; set; }
         public List<string> Authors { get; set; }
         public int Year { get; set; }
